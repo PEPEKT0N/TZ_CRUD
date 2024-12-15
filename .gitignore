@@ -1,0 +1,24 @@
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.so
+*.dylib
+*.log
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Кэш и временные файлы
+.vs/
+.vscode/
+.idea/
+*.swp
+*.lock.json
+project.lock.json
+*.pid
+
