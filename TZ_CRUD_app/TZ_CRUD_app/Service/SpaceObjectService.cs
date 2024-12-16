@@ -17,6 +17,16 @@ namespace TZ_CRUD_app.Service
             return await _db.SpaceObjects.ToListAsync();
         }
 
+        public async Task<(List<SpaceObject>, int?)> ListPageAsync(int id, int limit)
+        {
+            var result = await _db.SpaceObjects
+                .Where(so => so.Id > id)
+                .Take(limit)
+                .ToListAsync();
+            int? lastId = result.LastOrDefault()?.Id;
+            return (result, lastId);
+        }
+
         // получение космического объекта по id
         public async Task<SpaceObject?> GetAsync(int id)
         {

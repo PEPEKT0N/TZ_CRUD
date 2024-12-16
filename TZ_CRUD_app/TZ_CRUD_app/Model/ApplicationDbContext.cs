@@ -11,7 +11,13 @@ namespace TZ_CRUD_app.Model
         // конфигурирования
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            IConfigurationRoot config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+            string useConnection = config.GetSection("UseConnection").Value ?? "DefaultConnection";
+            string? connectionString = config.GetConnectionString(useConnection);
+            optionsBuilder.UseSqlServer(connectionString);
         }
     }
 }

@@ -8,5 +8,7 @@ namespace TZ_CRUD_app.Model
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;    // название категории
+
+        public HashSet<SpaceObject>? SpaceObjects {  get; set; } 
     }
 }
