@@ -12,7 +12,7 @@ using TZ_CRUD_app.Model;
 namespace TZ_CRUD_app.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241215163224_Init")]
+    [Migration("20241217153102_Init")]
     partial class Init
     {
         /// <inheritdoc />

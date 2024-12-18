@@ -2,7 +2,7 @@
 {
     public class PagingService
     {
-        private const int DEFAULT_PAGE_SIZE = 8;
+        private const int DEFAULT_PAGE_SIZE = 32;
         private const int MAX_PAGE_SIZE = 1024;
 
         private readonly int _pageSize;
